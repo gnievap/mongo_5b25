@@ -47,5 +47,20 @@ class MongoService {
     }
     return phones.map((phone) => PhoneModel.fromJson(phone)).toList();
   }
+
+  Future<void> insertPhone(PhoneModel phone) async {
+    _db.databaseName = 'productos';
+    final collection = _db.collection('celulares');
+    await collection.insertOne(phone.toJson());
+  }
+
+  Future<void> updatePhone(PhoneModel phone) async {
+    _db.databaseName = 'productos';
+    final collection = _db.collection('celulares');
+    await collection.updateOne(
+      mongo.where.eq('_id', phone.id),
+      mongo.modify.set('marca', phone.marca).set('modelo', phone.modelo).set('existencia', phone.existencia).set('precio', phone.precio)
+    );
+  }
 }
         
