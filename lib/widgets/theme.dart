@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ThemeData tema1() {
   return ThemeData(
     // color base
     scaffoldBackgroundColor: Colors.black,
-    primaryColor: Color.fromARGB(255, 207, 207, 210),
+    primaryColor: const Color.fromARGB(255, 207, 207, 210),
 
     // Barra de la App
-    appBarTheme: const AppBarTheme(
-      backgroundColor: Color.fromARGB(255, 161, 157, 157),
-      titleTextStyle: TextStyle(
+    appBarTheme:  AppBarTheme(
+      backgroundColor: const Color.fromARGB(255, 118, 163, 230),
+      titleTextStyle: GoogleFonts.aBeeZee(
         color: Colors.white,
-        fontSize: 24,
+        fontSize: 23,
       ),
+      
     ),
 
     textTheme: const TextTheme(
@@ -26,16 +28,27 @@ ThemeData tema1() {
       bodyMedium: TextStyle(
         color: Color.fromARGB(255, 164, 174, 219),
         fontWeight: FontWeight.bold,
-        fontSize: 15,
+        fontSize: 22,
       ),
       // Texto informativo 2
       bodySmall: TextStyle(
-        color: Color.fromARGB(255, 164, 174, 219),
+        color: Color.fromARGB(255, 182, 192, 237),
         fontWeight: FontWeight.bold,
-        fontSize: 13,
+        fontSize: 18,
       ),
     ),
 
+    elevatedButtonTheme:  ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.amber,
+        foregroundColor: Colors.black,
+      ),
+      ),
+
+    iconTheme: const IconThemeData(
+      color: Colors.white,
+      size: 30,
+    ),
 
   );
 
